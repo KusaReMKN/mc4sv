@@ -1,0 +1,81 @@
+.\"
+.\" Copyright (c) 2022 KusaReMKN.  All rights reserved.
+.\"     Available under the BSD 2-Clause License.
+.\"
+.Dd 5th March 2022
+.Dt MC4SV 1
+.Os
+.Sh NAME
+.Nm mc4sv
+.Nd receive UDP/IPv4 multicast datagrams
+.Sh SYNOPSIS
+.Nm
+.Op Fl i Ar interface
+.Op Fl q
+.Op Fl t Ar timeout
+.Op Ar mcast-group Op Ar service
+.Sh DESCRIPTION
+The
+.Nm
+utility received UDP/IPv4 multicast datagrams.
+By default,
+.Ar mcast-group
+is
+.Ql 224.0.0.1
+and
+.Ar service
+is
+.Ql discard
+.Pq port 9 .
+.Pp
+The following options are available:
+.Bl -tag -width "-i interface"
+.It Fl i Ar interface
+Specify the network interface to listen on.
+.It Fl q
+Quiet mode.
+Nothing is displayed expect the summary line at the end.
+.It Fl t Ar timeout
+Specify a timeout in seconds.
+The maximum value can be specified is
+.Ql 3600
+.Pq 1 hour .
+If 
+.Ql 0
+is specified, no timeout occurs.
+.Sh EXIT STATUS
+.Ex -std
+.Sh SEE ALSO
+.Xr inet 3 ,
+.Xr inet 4 ,
+.Xr ip 4 ,
+.Xr udp 4 ;
+.Xr igmp 4 ,
+.Xr multicast 4
+.Sh COPYRIGHT
+Copyright \(co 2022 KusaReMKN.
+All rights reserved.
+.Pp
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+.Bl -enum
+.It
+Redistributions of source code must retain the above copyright notice, this
+list of conditions and the following disclaimer.
+.It
+Redistributions in binary form must reproduce the above copyright notice, this
+list of conditions and the following disclaimer in the documentation and/or
+other materials provided with the distribution.
+.El
+.Pp
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+.Dq AS IS
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
